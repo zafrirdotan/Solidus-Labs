@@ -1,0 +1,19 @@
+.selected-event-container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  .selected-event-box {
+    width: 50%;
+    padding: 10px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .selected-event-box {
+      width: 100%;
+    }
+    flex-direction: column;
+    .toggle-snapshot-button {
+      display: block;
+    }
+  }
+}

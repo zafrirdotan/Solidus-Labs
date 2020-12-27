@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {  Subscription } from 'rxjs';
+import { EventsService } from './services/eventsStore.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'solidus-lab';
+  
+  constructor(private eventsService: EventsService){}
+
+  ngOnInit(): void {
+   this.eventsService.getAssets()
+
+  }
 }

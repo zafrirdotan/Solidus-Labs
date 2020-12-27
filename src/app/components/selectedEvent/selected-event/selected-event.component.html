@@ -1,0 +1,21 @@
+
+<div class="selected-event-container">
+    <div class="selected-event-box">
+        <mat-card >
+            <app-details *ngIf="selectedEvent && !eventsService.isChartShowing" [eventData]="selectedEvent"></app-details>
+            <app-prices-chart *ngIf="eventsService.isChartShowing" ></app-prices-chart>
+            
+        </mat-card>
+        <app-player></app-player>
+    </div>
+    <div class="selected-event-box" *ngIf="isSnapshotTableOpen">
+        <mat-card>
+            <app-snapshot-table *ngIf="snapshotTable" [snapshotData]="snapshotTable">
+                
+            </app-snapshot-table>
+        </mat-card>
+    </div>
+    <button mat-button color="primary" *ngIf="eventsService.isMobile" (click)="toggleIsSnapshotTable()">
+        {{ !isSnapshotTableOpen? 'Show Snapshot Values': 'close Snapshot Values'}}
+    </button>
+</div>

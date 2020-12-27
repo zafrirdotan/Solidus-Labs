@@ -1,0 +1,36 @@
+<mat-card-actions>
+    <button mat-button (click)="eventsService.setFirstEvent()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">first_page</mat-icon>    
+        First
+    </button>
+    <button mat-button (click)="eventsService.setPrevIndex()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">skip_previous</mat-icon>    
+        Prev
+    </button>
+    <button mat-button (click)="eventsService.setNextIndex()">
+        Next
+        <mat-icon aria-hidden="false" aria-label="Example home icon">skip_next</mat-icon>    
+    </button>
+    <button mat-button (click)="eventsService.setLastEvent()">
+        Last
+        <mat-icon aria-hidden="false" aria-label="Example home icon">last_page</mat-icon>    
+    </button>
+    <button mat-button *ngIf="!eventsService.isPlaying" (click)="eventsService.playEventList()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">play_arrow</mat-icon>    
+        Play
+    </button>
+    <button mat-button *ngIf="eventsService.isPlaying" (click)="eventsService.stopPlayer()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">pause_presentation</mat-icon>    
+        pause
+    </button>
+    <button mat-button *ngIf="!eventsService.isChartShowing" (click)="eventsService.setChartDisplay()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">bar_chart</mat-icon>    
+        Chart
+    </button>
+    <button mat-button *ngIf="eventsService.isChartShowing"(click)="eventsService.setDetailsDisplay()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">
+            article
+        </mat-icon>    
+        Details
+    </button>
+</mat-card-actions>

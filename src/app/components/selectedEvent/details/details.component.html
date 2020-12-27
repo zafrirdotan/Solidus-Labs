@@ -1,0 +1,30 @@
+<mat-card-content class="selected-event-data">
+  <p class="card-text-item">
+    <span class="card-text-lable">
+      Timestamp
+      :
+    </span>
+    <span class="card-text-data">
+      {{eventData.timestamp | date: "dd/mm/yyyy mm:ss"}}
+    </span>
+  </p> 
+  <p class="card-text-item">
+    <span class="card-text-lable">
+      Price
+      :
+    </span>
+    <span class="card-text-data">
+      {{eventData.price | currency}}
+
+    </span>
+  </p> 
+  <p class="card-text-item">
+    <span class="card-text-lable">
+      Status
+      :
+    </span>
+    <span class="card-text-data">
+      {{eventData.status}}
+    </span>
+  </p> 
+</mat-card-content>
